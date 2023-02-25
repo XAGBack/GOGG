@@ -15,11 +15,40 @@ html, body {
   box-shadow: rgb(70 65 71) -1px -1px 0px 0px inset, white 1px 1px 0px 0px inset, rgb(160 153 161) -2px -2px 0px 0px inset, rgb(222 220 222) 2px 2px 0px 0px inset;
 }
 .classic-button:active, .classic-button.active {
-  background-position: 0px 0px, 1px 1px;
   background: linear-gradient(45deg, rgb(239, 238, 240) 25%, transparent 25%, transparent 75%, rgb(239, 238, 240) 75%, rgb(239, 238, 240)) 0px 0px / 2px 2px, rgb(202, 198, 203);
   box-shadow: white -1px -1px 0px 0px inset, rgb(70, 65, 71) 1px 1px 0px 0px inset, rgb(222, 220, 222) -2px -2px 0px 0px inset, rgb(202, 198, 203) 2px 2px 0px 0px inset;
 }
 
 .window-handle {
   background: linear-gradient(90deg, rgb(0, 131, 208) 0%, rgb(160, 220, 255) 40%, rgb(84, 192, 255) 72%, rgb(0, 131, 208) 100%);
+}
+
+.classic-border {
+  padding: 4px;
+  /* box-shadow: rgb(70 65 71) -2px -2px 0px 0px inset, white 2px 2px 0px 0px inset, rgb(160 153 161) -4px -4px 0px 0px inset, rgb(222 220 222) 4px 4px 0px 0px inset; */
+  box-shadow: rgb(70 65 71) -1px -1px 0px 0px inset, white 1px 1px 0px 0px inset, rgb(160 153 161) -2px -2px 0px 0px inset, rgb(222 220 222) 2px 2px 0px 0px inset;
+}
+
+.classic-divider {
+  position: relative;
+  width: 1px;
+  background: rgb(128, 128, 136);
+  box-shadow: rgb(255 255 255) 1px 0px 0px;
+}
+.classic-bump::before {
+    position: absolute;
+    height: calc(100% - 6px);
+    left: 4px;
+    top: 3px;
+    content: "";
+    width: 3px;
+    background: rgb(202, 198, 203);
+    box-shadow: rgb(128 128 136) -1px -1px 0px inset, rgb(255 255 255) 1px 1px 0px inset;
+}
+.classic-inset {
+  box-shadow: rgb(222 220 222) -1px -1px 0px 0px inset, rgb(160 153 161) 1px 1px 0px 0px inset, rgb(202 198 203) -2px -2px 0px 0px inset, rgb(70 65 71) 2px 2px 0px 0px inset;
+}
+
+.classic-corner {
+  filter: drop-shadow(-1px -1px 0px rgb(222 220 222))
 }

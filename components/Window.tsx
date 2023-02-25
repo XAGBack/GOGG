@@ -1,7 +1,7 @@
 import useDragResize, { Position, Size } from "../hooks/useDragResize";
 import clsx from "clsx";
 import { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
-import { useWindowsContext } from "@/context/WindowsProvider";
+import { ICONS, useWindowsContext } from "../context/WindowsProvider";
 import Button from "./Button";
 import { Corner } from "../svg/corner";
 import { Close } from "../svg/close";
@@ -61,47 +61,61 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
       }}
       onMouseDown={changeOrder}
       className={clsx(
-        "absolute",
-        "bg-gray-200",
+        "absolute flex flex-col",
+        "bg-windowsGray classic-border",
         "select-none",
-        isDragging ? "shadow-lg" : "shadow",
         isMin ? "animate-exit" : "animate-enter"
       )}
     >
       <div
-        className="window-handle bg-gray-300 cursor-grab active:cursor-grabbing flex justify-between"
+        className="bg-windowsHeader p-1 cursor-grab active:cursor-grabbing flex justify-between items-center"
         ref={dragRef}
       >
-        handle
+        <div className="flex items-center gap-2">
+          <img src={ICONS[windowKey]} alt="" className="w-5" />
+          <p className="text-white leading-none">{windowKey}</p>
+        </div>
         <div className="flex items-center gap-1">
-          <Button className="w-6 h-6 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center"
             onClick={handleMinimize}
           >
-            <Minimize size={20} />
+            <Minimize size={16} />
           </Button>
-          <Button className="w-6 h-6 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center"
             onClick={handleMaximize}
           >
-            <Maximize size={20} />
+            <Maximize size={16} />
           </Button>
           
-          <Button className="w-6 h-6 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center"
             onClick={handleMinimize}
           >
-            <Close size={20} />
+            <Close size={16} />
           </Button>
         </div>
       </div>
-      {children}
 
-      <div
-        className="absolute bottom-0 right-0 cursor-nwse-resize"
-        ref={resizeRef}
-      >
-        <Corner size={14} />
+      <div className="flex gap-2">
+        <p><span className="underline">V</span>iew</p>
+        <p><span className="underline">E</span>dit</p>
+        <p><span className="underline">H</span>elp</p>
       </div>
+
+      <div className="classic-inset bg-white h-full">
+        {children}
       </div>
-    // </Transition>
+
+      <div className="flex gap-1 items-end">
+        <div className="w-1/2 h-5 classic-button active"></div>
+        <div className="w-1/2 h-5 classic-button active"></div>
+        <div
+          className="cursor-nwse-resize"
+          ref={resizeRef}
+        >
+          <Corner size={18} className="text-windowsDarkGray classic-corner"/>
+        </div>
+      </div>
+    </div>
   )
 }
 

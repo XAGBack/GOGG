@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import Icons from '@/components/Icons'
 import { WINDOWS } from '@/context/WindowsProvider'
 import Head from 'next/head'
 
@@ -15,7 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='h-screen flex flex-col'>
-        <div id="window-container" className='h-full relative' >
+        <div id="window-container" className='h-full relative bg-windowsBG' >
+
+          <Icons />
           <Window windowKey={WINDOWS.HOME}>HOME</Window>
           <Window windowKey={WINDOWS.OTHER} initPosition={{ x: 500, y: 300 }}>
             Other

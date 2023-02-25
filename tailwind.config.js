@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        windowsBG: "#018583",
+        windowsHeader: "#100084",
+        windowsGray: "#C4C4C4",
+        windowsDarkGray: "#7D8583"
+      },
       height: { screen: 'calc(var(--vh) * 100)' },
       maxHeight: { screen: 'calc(var(--vh) * 100)' },
       minHeight: { screen: 'calc(var(--vh) * 100)' },

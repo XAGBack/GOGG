@@ -30,6 +30,11 @@ export const WINDOWS = {
   OTHER: "Other"
 }
 
+export const ICONS = {
+  [WINDOWS.HOME]: "gogg-icon.jpeg",
+  [WINDOWS.OTHER]: "gogg-icon.jpeg"
+}
+
 const defaultHidden = Object.values(WINDOWS).reduce((acc: {[key:string]: boolean}, curr) => {
   acc[curr] = false
   return acc
