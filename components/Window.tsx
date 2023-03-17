@@ -108,7 +108,7 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
         </div>
       </div>
 
-      <div className="flex gap-2" ref={menuRef}>
+      <div className="flex gap-2 px-1" ref={menuRef}>
         <p><span className="underline">V</span>iew</p>
         <p><span className="underline">E</span>dit</p>
         <p><span className="underline">H</span>elp</p>
@@ -127,7 +127,7 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
           className="h-full py-0.5"
           ref={resizeRef}
         >
-          <Corner size={14} className="text-windowsDarkGray classic-corner relative -bottom-0.5"/>
+          <Corner size={14} className="text-windowsDarkGray classic-corner relative -bottom-0.5 cursor-grab active:cursor-grabbing"/>
         </div>
       </div>
     </div>

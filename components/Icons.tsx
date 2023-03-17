@@ -24,7 +24,7 @@ const Icons: FC = () => {
         return (
           <div
             key={windowKey}
-            className="cursor-default select-none text-white flex flex-col items-center w-fit"
+            className="custom-cursor select-none text-white flex flex-col items-center w-fit"
             onDoubleClick={handleClick}
           >
             <img src={ICONS[windowKey]} alt={`${windowKey} Icon`} className="w-14" />

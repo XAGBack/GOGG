@@ -4,6 +4,8 @@ import { FC, useEffect, useState } from "react";
 import Button from "./Button";
 import StartMenu from "./StartMenu";
 import useWindowSize from "@/hooks/useWindowSize";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer: FC = () => {
   const [time, setTime] = useState(new Date())
@@ -69,8 +71,16 @@ const Footer: FC = () => {
 
       <div className="relative flex">
         <div className="classic-divider h-full w-[1px] mr-1" />
-        <div className="w-40 px-2 classic-button active flex items-center justify-end">
-          {time.toLocaleString(undefined, {"hour": "numeric", minute: "2-digit"})}
+        <div className="px-4 classic-button active flex items-center justify-end gap-1">
+          <Link href="https://twitter.com/GameoverGGs">
+          <Image unoptimized src="/images/block-twitter.png" alt="Twitter" width="24" height="24"/>
+          </Link>
+          <Link href="twitter.com">
+            <Image unoptimized src="/images/block-discord.png" alt="Twitter" width="24" height="24" />
+          </Link>
+          <p className="ml-2">
+            {time.toLocaleString(undefined, {"hour": "numeric", minute: "2-digit"})}
+          </p>
         </div>
       </div>
     </div>
