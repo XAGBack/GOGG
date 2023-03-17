@@ -1,12 +1,13 @@
 import useDragResize, { Position, Size } from "../hooks/useDragResize";
 import clsx from "clsx";
-import { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
+import { FC, MouseEventHandler, ReactNode, useEffect, useRef, useState } from "react";
 import { ICONS, useWindowsContext } from "../context/WindowsProvider";
 import Button from "./Button";
 import { Corner } from "../svg/corner";
 import { Close } from "../svg/close";
 import { Minimize } from "../svg/minimize";
 import { Maximize } from "../svg/maximize";
+import useWindowSize from "@/hooks/useWindowSize";
 interface WindowProps {
   children: ReactNode;
   initPosition?: Position;
@@ -14,12 +15,20 @@ interface WindowProps {
   windowKey: string;
 }
 const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }) => {
-  const { dragRef, position, isDragging, resizeRef, containerRef, size, handleMaximize } = useDragResize(initPosition, initSize)
+  const { dragRef, position, isDragging, resizeRef, containerRef, size, handleMaximize, isMax } = useDragResize(initPosition, initSize, windowKey)
   const {orderState, minimizedState} = useWindowsContext()
   const [orderList, setOrderList] = orderState
   const [minimizedMap, setMinimizedMap] = minimizedState
+
+  const { isMdScreen } = useWindowSize()
   
   const [isHidden, setIsHidden] = useState(false)
+
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  const offsetHeight = menuRef.current && dragRef.current && resizeRef.current
+    ? menuRef.current.offsetHeight + dragRef.current.offsetHeight + resizeRef.current.offsetHeight
+    : 78 // estimate
   
   const isMin = minimizedMap[windowKey]
   const orderIndex = orderList.findIndex(item => item === windowKey);
@@ -68,7 +77,10 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
       )}
     >
       <div
-        className="bg-windowsHeader p-1 cursor-grab active:cursor-grabbing flex justify-between items-center"
+        className={clsx(
+          "p-1 cursor-grab active:cursor-grabbing flex justify-between items-center",
+          orderIndex === orderList.length-1 ? "bg-windowsHeader " : "bg-windowsDarkGray"
+        )}
         ref={dragRef}
       >
         <div className="flex items-center gap-2">
@@ -83,6 +95,7 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
           </Button>
           <Button className="w-5 h-5 flex justify-center items-center"
             onClick={handleMaximize}
+            disabled={isMdScreen}
           >
             <Maximize size={16} />
           </Button>
@@ -95,24 +108,26 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
         </div>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-2" ref={menuRef}>
         <p><span className="underline">V</span>iew</p>
         <p><span className="underline">E</span>dit</p>
         <p><span className="underline">H</span>elp</p>
       </div>
 
-      <div className="classic-inset bg-white h-full">
-        {children}
+      <div className="classic-inset bg-white relative" style={{height: `calc(100% - ${offsetHeight}px)`}}>
+        <div className="overflow-auto h-full">
+          {children}
+        </div>
       </div>
 
       <div className="flex gap-1 items-end">
-        <div className="w-1/2 h-5 classic-button active"></div>
-        <div className="w-1/2 h-5 classic-button active"></div>
+        <div className="w-1/2 h-4 classic-button active"></div>
+        <div className="w-1/2 h-4 classic-button active"></div>
         <div
-          className="cursor-nwse-resize"
+          className="h-full py-0.5"
           ref={resizeRef}
         >
-          <Corner size={18} className="text-windowsDarkGray classic-corner"/>
+          <Corner size={14} className="text-windowsDarkGray classic-corner relative -bottom-0.5"/>
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
+import { useWindowsContext } from "@/context/WindowsProvider";
 import { useEffect, useRef, useState } from "react";
+import useWindowSize from "./useWindowSize";
 
 export interface Position {
   x: number;
@@ -18,18 +20,29 @@ const defaultSize: Size = {
   w: 500,
   h: 300
 }
-export default function useDragResize(initPosition = defaultPosition, initSize = defaultSize) {
+export default function useDragResize(initPosition = defaultPosition, initSize = defaultSize, windowKey: string ) {
   const [position, setPosition] = useState<Position>(initPosition);
   const [size, setSize] = useState(initSize)
   const [isDragging, setIsDragging] = useState(false)
-  
 
+  const { minimizedState } = useWindowsContext()
+  const [minimizedMap] = minimizedState
+  const isMin = minimizedMap[windowKey]
+
+  const { width, height, isMdScreen } = useWindowSize()
+  const wSizeReady = Boolean(width && height)
+  
   const containerRef = useRef<HTMLDivElement | null>(null)
   const dragRef = useRef<HTMLDivElement | null>(null)
   const resizeRef = useRef<HTMLDivElement | null>(null)
   const initPositionRef = useRef<Position>(initPosition);
   const mousedownPosition = useRef<Position>(initPosition)
   const isMax = useRef(false)
+
+  useEffect(() => {
+    if (isMdScreen) setMax()
+
+  },[wSizeReady])
 
   //---------------DRAG LOGIC---------------
 
@@ -126,27 +139,30 @@ export default function useDragResize(initPosition = defaultPosition, initSize =
   }, [resizeRef])
 
   const handleMaximize = () => {
-    if (isMax.current) {
-      isMax.current = false
-      setPosition({
-        x: initPositionRef.current.x,
-        y: initPositionRef.current.y
-      })
-    } else {
-      isMax.current = true
-      setPosition({
-        x: 0,
-        y: 0
-      })
-    }
+    if (isMax.current) setRegular();
+    else setMax()
+  }
+  const setMax = () => {
+    isMax.current = true
+    setPosition({
+      x: 0,
+      y: 0
+    })
+  }
+  const setRegular = () => {
+    isMax.current = false
+    setPosition({
+      x: initPositionRef.current.x,
+      y: initPositionRef.current.y
+    })
   }
 
-  const currentSize = isMax.current
+  const currentSize = isMax.current && !isMin
     ? {
       w: "100%",
       h: "100%"
     }
     : size
   
-  return { dragRef, position, isDragging, resizeRef, containerRef, size: currentSize, handleMaximize}
+  return { dragRef, position, isDragging, resizeRef, containerRef, size: currentSize, handleMaximize, isMax: isMax.current}
 }

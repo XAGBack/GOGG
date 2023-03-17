@@ -3,12 +3,15 @@ import clsx from "clsx";
 import { FC, useEffect, useState } from "react";
 import Button from "./Button";
 import StartMenu from "./StartMenu";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const Footer: FC = () => {
   const [time, setTime] = useState(new Date())
   const { orderState, minimizedState } = useWindowsContext()
   const [orderList, setOrderList] = orderState
   const [minimizedMap, setMinimizedMap] = minimizedState
+
+  const { isMdScreen } = useWindowSize()
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -19,12 +22,13 @@ const Footer: FC = () => {
 
   const sorted = [...orderList].sort()
   return (
-    <div className="flex justify-between w-full bg-gray-300 p-1 classic-border">
-      <div className="flex gap-1 relative">
+    <div className="flex justify-between w-full bg-gray-300 p-1 classic-border z-10">
+      <div className={clsx("flex gap-1 relative")}>
         <StartMenu />
         <div className="classic-divider classic-bump h-full mr-2" />
 
-        {sorted.map(windowKey => {
+        {!isMdScreen
+          ? sorted.map(windowKey => {
           const orderIndex = orderList.findIndex(item => item === windowKey);
           const active = orderIndex === orderList.length-1 && !minimizedMap[windowKey];
 
@@ -58,7 +62,9 @@ const Footer: FC = () => {
               {windowKey}
             </Button>
           )
-        })}
+          })
+          : null
+      }
       </div>
 
       <div className="relative flex">

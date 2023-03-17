@@ -1,6 +1,7 @@
-import Footer from '@/components/Footer'
-import Icons from '@/components/Icons'
-import { WINDOWS } from '@/context/WindowsProvider'
+import Footer from '../components/Footer'
+import Icons from '../components/Icons'
+import HomeWindow from '../components/windows/Home'
+import { WINDOWS } from '../context/WindowsProvider'
 import Head from 'next/head'
 
 import Window from "../components/Window"
@@ -19,8 +20,8 @@ export default function Home() {
         <div id="window-container" className='h-full relative bg-windowsBG' >
 
           <Icons />
-          <Window windowKey={WINDOWS.HOME}>HOME</Window>
-          <Window windowKey={WINDOWS.OTHER} initPosition={{ x: 500, y: 300 }}>
+          <HomeWindow />
+          <Window windowKey={WINDOWS.OTHER} initPosition={{ x: 600, y: 500 }}>
             Other
           </Window>
         </div>

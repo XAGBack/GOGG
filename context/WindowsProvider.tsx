@@ -26,13 +26,13 @@ export const WindowsContext = createContext(initContext)
 export const useWindowsContext = () => useContext(WindowsContext)
 
 export const WINDOWS = {
+  OTHER: "Other",
   HOME: "Home",
-  OTHER: "Other"
 }
 
 export const ICONS = {
-  [WINDOWS.HOME]: "gogg-icon.jpeg",
-  [WINDOWS.OTHER]: "gogg-icon.jpeg"
+  [WINDOWS.HOME]: "/images/gogg-icon.jpeg",
+  [WINDOWS.OTHER]: "/images/gogg-icon.jpeg"
 }
 
 const defaultHidden = Object.values(WINDOWS).reduce((acc: {[key:string]: boolean}, curr) => {

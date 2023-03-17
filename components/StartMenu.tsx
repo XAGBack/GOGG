@@ -15,7 +15,7 @@ const StartMenu: FC = () => {
           <Menu.Button as={Button}
             className={clsx("px-3 py-1 flex gap-1 items-center", { active: open })}
           >
-            <img src="gogg-icon.jpeg" alt="gameover GG icon" className="w-5"/>
+            <img src="/images/gogg-icon.jpeg" alt="gameover GG icon" className="w-5"/>
             Start
           </Menu.Button>
         
