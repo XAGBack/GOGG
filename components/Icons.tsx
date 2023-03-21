@@ -27,7 +27,7 @@ const Icons: FC = () => {
             className="custom-cursor select-none text-white flex flex-col items-center w-fit"
             onDoubleClick={handleClick}
           >
-            <img src={ICONS[windowKey]} alt={`${windowKey} Icon`} className="w-14" />
+            <img src={ICONS[windowKey]} alt={`${windowKey} Icon`} className="w-14 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.5)] mb-1" />
             {windowKey}
           </div>
         )

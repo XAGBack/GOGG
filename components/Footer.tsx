@@ -57,7 +57,7 @@ const Footer: FC = () => {
           return (
             <Button
               key={windowKey}
-              className={clsx("px-2 w-24 text-start flex items-center gap-1", { active })}
+              className={clsx("px-2 w-32 text-start flex items-center gap-1", { active })}
               onClick={handleClick}
             >
               <img src={ICONS[windowKey]} alt="" className="w-5" />
@@ -75,8 +75,8 @@ const Footer: FC = () => {
           <Link href="https://twitter.com/GameoverGGs">
           <Image unoptimized src="/images/block-twitter.png" alt="Twitter" width="24" height="24"/>
           </Link>
-          <Link href="twitter.com">
-            <Image unoptimized src="/images/block-discord.png" alt="Twitter" width="24" height="24" />
+          <Link href="https://discord.com/invite/GOGGs">
+            <Image unoptimized src="/images/block-discord.png" alt="Discord" width="24" height="24" />
           </Link>
           <p className="ml-2">
             {time.toLocaleString(undefined, {"hour": "numeric", minute: "2-digit"})}

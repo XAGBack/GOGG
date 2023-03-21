@@ -5,6 +5,8 @@ import { WINDOWS } from '../context/WindowsProvider'
 import Head from 'next/head'
 
 import Window from "../components/Window"
+import DiscordWindow from '../components/windows/Discord'
+import RaidWindow from '../components/windows/Raid'
 
 
 export default function Home() {
@@ -21,9 +23,8 @@ export default function Home() {
 
           <Icons />
           <HomeWindow />
-          <Window windowKey={WINDOWS.OTHER} initPosition={{ x: 600, y: 500 }}>
-            Other
-          </Window>
+          <DiscordWindow />
+          <RaidWindow />
         </div>
         <Footer />
       </main>
