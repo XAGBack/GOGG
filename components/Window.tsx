@@ -13,8 +13,9 @@ interface WindowProps {
   initPosition?: Position;
   initSize?: Size
   windowKey: string;
+  inset?: boolean
 }
-const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }) => {
+const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize, inset = true }) => {
   const { dragRef, position, isDragging, resizeRef, containerRef, size, handleMaximize, isMax } = useDragResize(initPosition, initSize, windowKey)
   const {orderState, minimizedState} = useWindowsContext()
   const [orderList, setOrderList] = orderState
@@ -114,8 +115,12 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize }
         <p><span className="underline">H</span>elp</p>
       </div>
 
-      <div className="classic-inset bg-white relative" style={{height: `calc(100% - ${offsetHeight}px)`}}>
-        <div className="overflow-auto h-full">
+      <div
+        className={clsx(inset && "classic-inset",
+          "bg-white relative"
+        )} 
+      style={{ height: `calc(100% - ${offsetHeight}px)` }}>
+        <div className="overflow-auto h-full bg-windowsGray">
           {children}
         </div>
       </div>

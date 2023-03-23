@@ -44,15 +44,35 @@ const StartMenu: FC = () => {
                     key={windowKey}
                   >
                     <div
-                      className="px-2 py-1 w-24 cursor-default select-none hover:bg-windowsHeader hover:text-white"
+                      className="px-2 py-1 w-24 select-none hover:bg-windowsHeader hover:text-white"
                       onClick={handleClick}
                     >
                       <span className="underline">{label[0]}</span>{label.slice(1)}
                     </div>
-                    
                   </Menu.Item>
                 )
               })}
+              <Menu>
+                {({ open }) => (
+                  <div className="relative">
+                    <Menu.Button 
+                      className={clsx("px-2 py-1 w-24 custom-cursor text-left select-none hover:bg-windowsHeader hover:text-white", { active: open })}
+                    >
+                      <span className="underline">M</span>int
+                    </Menu.Button>
+                    <Menu.Items className="absolute left-[104%] bottom-0 z-10 bg-windowsGray classic-border p-1 flex">
+                      <Menu.Item>
+                        <div
+                          className="px-2 py-1 w-[8rem] select-none hover:bg-windowsDarkGray hover:text-white cursor-not-allowed"
+
+                        >
+                          c̵̝̱͇̍͗͗͝ǫ̶͍̜̲̐ṃ̷̡̠̄̄̈̚̕͘͜i̸̼͔̻̖̘̽͂̇̀̃n̸̖̲̱͕̹̹͗͌͊̓g̶͙̫̜͚̑̅̂́ ̴̡̭̜̹̐̄̈́̕̕͠ͅs̷͙͔̞̺̍̌̈́́̌o̴̭̗͚̥̪͛͑̔͜o̴̡̟̞͂̿̒͋͜ņ̸̧̺̬̻̈́̐̓͗̀̚
+                        </div>
+                      </Menu.Item>
+                    </Menu.Items>
+                  </div>
+                )}
+              </Menu>
             </div>
           </Menu.Items>
         </>
