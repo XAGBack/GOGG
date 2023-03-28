@@ -21,7 +21,7 @@ const RaidWindow: FC = () => {
     setMessage(event.target.value);
   }
 
-  const email = "gogg-raids@gmail.com"
+  const email = "goggsnft@gmail.com"
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();

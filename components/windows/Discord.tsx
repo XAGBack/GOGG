@@ -39,8 +39,8 @@ const DiscordWindow: FC = () => {
             )}
           />
           <Message
-            name="EarlyInvestor"
-            img="/images/pfps/EarlyInvestor.png"
+            name="Web3 Lad"
+            img="/images/pfps/Web3 Lad.png"
             time={now - 905000}
             body={<p>FK</p>}
           />
@@ -69,8 +69,8 @@ const DiscordWindow: FC = () => {
             </p>}
           />
           <Message
-            name="EarlyInvestor"
-            img="/images/pfps/EarlyInvestor.png"
+            name="Web3 Lad"
+            img="/images/pfps/Web3 Lad.png"
             time={now - 750000}
             body={<p>Distract him taggin him elswhere 😛</p>}
           />
