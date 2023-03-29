@@ -89,22 +89,25 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize, 
           <p className="text-white leading-none">{windowKey}</p>
         </div>
         <div className="flex items-center gap-1">
-          <Button className="w-5 h-5 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center p-1"
             onClick={handleMinimize}
           >
-            <Minimize size={16} />
+            {/* <Minimize size={16} /> */}
+            <img src="/images/min.png" alt="minimize" />
           </Button>
-          <Button className="w-5 h-5 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center p-1"
             onClick={handleMaximize}
             disabled={isMdScreen}
           >
-            <Maximize size={16} />
+            {/* <Maximize size={16} /> */}
+            <img src="/images/max.png" alt="full screen" />
           </Button>
           
-          <Button className="w-5 h-5 flex justify-center items-center"
+          <Button className="w-5 h-5 flex justify-center items-center p-1"
             onClick={handleMinimize}
           >
-            <Close size={16} />
+            {/* <Close size={16} /> */}
+            <img src="/images/close3.png" alt="close"/>
           </Button>
         </div>
       </div>

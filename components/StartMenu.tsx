@@ -13,10 +13,10 @@ const StartMenu: FC = () => {
       {({ open }) => (
         <>
           <Menu.Button as={Button}
-            className={clsx("px-3 py-1 flex gap-1 items-center", { active: open })}
+            className={clsx("px-3 py-1 flex gap-2 items-center", { active: open })}
           >
             <img src="/images/gogg-icon.jpeg" alt="gameover GG icon" className="w-5"/>
-            Start
+            <p className="-mb-0.5">Start</p>
           </Menu.Button>
         
           <Menu.Items className="absolute bottom-[100%] left-0 z-10 bg-windowsGray classic-border p-1 flex">
@@ -44,7 +44,7 @@ const StartMenu: FC = () => {
                     key={windowKey}
                   >
                     <div
-                      className="px-2 py-1 w-24 select-none hover:bg-windowsHeader hover:text-white"
+                      className="px-2 py-1 w-28 select-none hover:bg-windowsHeader hover:text-white"
                       onClick={handleClick}
                     >
                       <span className="underline">{label[0]}</span>{label.slice(1)}
@@ -56,7 +56,7 @@ const StartMenu: FC = () => {
                 {({ open }) => (
                   <div className="relative">
                     <Menu.Button 
-                      className={clsx("px-2 py-1 w-24 custom-cursor text-left select-none hover:bg-windowsHeader hover:text-white", { active: open })}
+                      className={clsx("px-2 py-1 w-full custom-cursor text-left select-none hover:bg-windowsHeader hover:text-white", { active: open })}
                     >
                       <span className="underline">M</span>int
                     </Menu.Button>

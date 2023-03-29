@@ -57,7 +57,7 @@ const Footer: FC = () => {
           return (
             <Button
               key={windowKey}
-              className={clsx("px-2 w-32 text-start flex items-center gap-1", { active })}
+              className={clsx("px-2 w-36 py-1 text-start flex items-center gap-2", { active })}
               onClick={handleClick}
             >
               <img src={ICONS[windowKey]} alt="" className="w-5" />
