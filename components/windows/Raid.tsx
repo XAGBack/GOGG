@@ -40,7 +40,7 @@ const RaidWindow: FC = () => {
   }
 
   return (
-    <Window windowKey={WINDOWS.RAID} initSize={initSize} initPosition={initPos} inset={false}>
+    <Window windowKey={WINDOWS.HOME} initSize={initSize} initPosition={initPos} inset={false}>
       <form className="h-full flex flex-col p-2 " onSubmit={handleSubmit}>
         <p className="font-bold text-lg">Sign up to have your Tweet raided!</p>
         <p>Please fill out each part of this form along with any extra info you need us to know in the message block.</p>
