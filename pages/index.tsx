@@ -23,7 +23,7 @@ export default function Home() {
           <Icons />
           <HomeWindow />
           <DiscordWindow />
-          <RaidWindow />
+          {/* <RaidWindow /> */}
           <DexWindow />
         </div>
         <Footer />
