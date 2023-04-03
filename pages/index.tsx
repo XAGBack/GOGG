@@ -1,12 +1,11 @@
 import Footer from '../components/Footer'
 import Icons from '../components/Icons'
 import HomeWindow from '../components/windows/Home'
-import { WINDOWS } from '../context/WindowsProvider'
 import Head from 'next/head'
 
-import Window from "../components/Window"
 import DiscordWindow from '../components/windows/Discord'
 import RaidWindow from '../components/windows/Raid'
+import DexWindow from '@/components/windows/Goggdex'
 
 
 export default function Home() {
@@ -25,6 +24,7 @@ export default function Home() {
           <HomeWindow />
           <DiscordWindow />
           <RaidWindow />
+          <DexWindow />
         </div>
         <Footer />
       </main>
