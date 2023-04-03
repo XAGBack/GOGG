@@ -28,7 +28,7 @@ export const useWindowsContext = () => useContext(WindowsContext)
 export const WINDOWS = {
   // SWEEPER: "Gogg Sweeper",
   DEX: "Goggdex",
-  RAID: "Twitter Quest",
+  // RAID: "Twitter Quest",
   DISCORD: "Discord",
   HOME: "Home",
 }
@@ -38,7 +38,7 @@ export const ICONS = {
   // [WINDOWS.SWEEPER]: "/images/pixel-bomb.png",
   [WINDOWS.HOME]: "/images/gogg-icon-block.png",
   [WINDOWS.DISCORD]: "/images/block-discord.png",
-  [WINDOWS.RAID]: "/images/block-quest.png"
+  // [WINDOWS.RAID]: "/images/block-quest.png"
 }
 
 const defaultHidden = Object.values(WINDOWS).reduce((acc: {[key:string]: boolean}, curr) => {
