@@ -6,7 +6,7 @@ import Window from "../Window"
 const goggNames = ["Draconis", "Nekorus", "Shelby the Yeti", "Medusa", "Armordillo",
   "Gobi the Goblin", "Arachne", "Hendrix", "DJ", "Nix", "Panda", "Wukong", "Ezio",
   "Apollo", "Anubis", "Tusk", "Vash & Nashor", "Sabre", "Thanos", "Jiro", "Helios",
-  "Void", "Jinn", "Oak", "Blanca", "Lilly"
+  "Void", "Jinn", "Oak", "Blanca","Antares", "Lilly"
 ]
 const DexWindow: FC = () => {
 

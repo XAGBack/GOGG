@@ -6,7 +6,7 @@ const Icons: FC = () => {
   const [orderList, setOrderList] = orderState
   const [minimizedMap, setMinimizedMap] = minimizedState
   return (
-    <div className="flex flex-col gap-5 relative top-10 left-10 items-center w-24">
+    <div className="flex z-[2] flex-col gap-5 relative top-10 left-10 items-center w-24">
       {Object.values(WINDOWS).map(windowKey => {
         const handleClick = () => {
           const newOrder = [...orderList]

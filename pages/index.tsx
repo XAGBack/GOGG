@@ -6,6 +6,7 @@ import Head from 'next/head'
 import DiscordWindow from '../components/windows/Discord'
 import RaidWindow from '../components/windows/Raid'
 import DexWindow from '@/components/windows/Goggdex'
+import Image from 'next/image'
 
 
 export default function Home() {
@@ -18,6 +19,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='h-screen flex flex-col'>
+        <div className='absolute z-[1] w-full h-full flex items-center justify-center p-2'>
+          <div className='grid lg:grid-cols-4 gap-2'>
+            <Image src="/images/gogg_1.png" alt="" height="200" width="200" className='hidden md:block' />
+            <Image src="/images/gogg_2.png" alt="" height="200" width="200" />
+            <Image src="/images/gogg_3.png" alt="" height="200" width="200" className='hidden md:block'/>
+            <Image src="/images/gogg_4.png" alt="" height="200" width="200" />
+          </div>
+        </div>
         <div id="window-container" className='h-full relative bg-windowsBG' >
 
           <Icons />

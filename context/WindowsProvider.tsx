@@ -36,7 +36,7 @@ export const WINDOWS = {
 export const ICONS = {
   [WINDOWS.DEX]: "/images/pokeball.png",
   // [WINDOWS.SWEEPER]: "/images/pixel-bomb.png",
-  [WINDOWS.HOME]: "/images/gogg-icon-block.png",
+  [WINDOWS.HOME]: "/images/gogg_0.png",
   [WINDOWS.DISCORD]: "/images/block-discord.png",
   // [WINDOWS.RAID]: "/images/block-quest.png"
 }
