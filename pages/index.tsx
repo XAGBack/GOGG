@@ -28,8 +28,7 @@ export default function Home() {
             <Image src="/images/gogg_4.png" alt="" height="200" width="200" />
           </div>
         </div>
-        <div id="window-container" className='h-full relative bg-windowsBG' >
-
+        <div id="window-container" className='relative bg-windowsBG' >
           <Icons />
           <HomeWindow />
           <DiscordWindow />
