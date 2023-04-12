@@ -17,8 +17,7 @@ const MarvelWindow: FC = () => {
 
   return (
     <Window windowKey={WINDOWS.MARVEL} initSize={initSize} initPosition={initPos}>
-      <Image src="/images/marvel.png" alt="" width={1983 / 2} height={997 / 2} />
-      
+      <Image src="/images/Marvel.png" alt="" width={1983 / 2} height={997 / 2} />
     </Window>
   )
 }
