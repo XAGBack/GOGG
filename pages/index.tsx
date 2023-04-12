@@ -19,7 +19,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='h-screen flex flex-col'>
+      <main className='h-screen grid grid-rows-[1fr_auto]'>
         <div className='absolute z-[1] w-full h-full flex items-center justify-center p-2'>
           <div className='grid lg:grid-cols-4 gap-2'>
             <Image src="/images/gogg_1.png" alt="" height="200" width="200" className='hidden md:block' />
