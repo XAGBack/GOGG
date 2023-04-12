@@ -7,6 +7,7 @@ import DiscordWindow from '../components/windows/Discord'
 import RaidWindow from '../components/windows/Raid'
 import DexWindow from '@/components/windows/Goggdex'
 import Image from 'next/image'
+import MarvelWindow from '@/components/windows/Marvel'
 
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
           <Icons />
           <HomeWindow />
           <DiscordWindow />
+          <MarvelWindow />
           {/* <RaidWindow /> */}
           <DexWindow />
         </div>

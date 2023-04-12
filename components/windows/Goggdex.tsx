@@ -15,8 +15,8 @@ const DexWindow: FC = () => {
     w: 600,
   }
   const initPos = {
-    x: 140,
-    y: 80
+    x: 180,
+    y: 40
   }
 
   return (
