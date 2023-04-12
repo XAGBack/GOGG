@@ -17,6 +17,8 @@ export default function Home() {
         <title>GameoverGGs</title>
         <meta name="description" content="A Primal DAO of 75 Boutique Creatures" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content={"/images/SUSHI_GOGGS.png"} />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='h-screen grid grid-rows-[1fr_auto]'>
