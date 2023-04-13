@@ -7,7 +7,7 @@ import DiscordWindow from '../components/windows/Discord'
 import RaidWindow from '../components/windows/Raid'
 import DexWindow from '@/components/windows/Goggdex'
 import Image from 'next/image'
-import MarvelWindow from '@/components/windows/Marvel'
+import MarvelWindow from '../components/windows/Marvel'
 
 import Logo from "../public/images/SUSHI_GOGGS.png"
 
@@ -19,7 +19,12 @@ export default function Home() {
         <title>GameoverGGs</title>
         <meta name="description" content="A Primal DAO of 75 Boutique Creatures" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="og:title" content="GameoverGGs" />
+        <meta name="og:description" content="A Primal DAO of 75 Boutique Creatures" />
         <meta property="og:image" content={Logo.src} />
+        <meta name="og:url" content="https://www.goggs.io/" />
+        <meta property="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
