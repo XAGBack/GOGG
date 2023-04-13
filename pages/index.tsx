@@ -23,6 +23,7 @@ export default function Home() {
         <meta name="og:title" content="GameoverGGs" />
         <meta name="og:description" content="A Primal DAO of 75 Boutique Creatures" />
         <meta property="og:image" content={Logo.src} />
+        <meta property='twitter:image' content={Logo.src} />
         <meta name="og:url" content="https://www.goggs.io/" />
         <meta property="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
