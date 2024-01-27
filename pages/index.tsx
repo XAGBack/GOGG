@@ -7,7 +7,7 @@ import DiscordWindow from '../components/windows/Discord'
 import RaidWindow from '../components/windows/Raid'
 import DexWindow from '@/components/windows/Goggdex'
 import Image from 'next/image'
-import MarvelWindow from '../components/windows/Koma'
+import MarvelWindow from '../components/windows/Marvel'
 
 import Logo from "../public/images/SUSHI_GOGGS.png"
 
