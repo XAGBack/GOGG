@@ -38,7 +38,7 @@ export const WINDOWS = {
 export const ICONS = {
   [WINDOWS.Marvel]: "/images/Marvel.png",
 
-  [WINDOWS.Koma]: "/images/koma.png",
+  [WINDOWS.Koma]: "/images/Koma_orange.png",
   [WINDOWS.DEX]: "/images/pokeball.png",
   // [WINDOWS.SWEEPER]: "/images/pixel-bomb.png",
   [WINDOWS.HOME]: "/images/gogg_0.png",
