@@ -16,8 +16,8 @@ const MarvelWindow: FC = () => {
   }
 
   return (
-    <Window windowKey={WINDOWS.Koma} initSize={initSize} initPosition={initPos}>
-      <Image src="/images/banner3.png" alt="" width={1983 / 2} height={997 / 2} />
+    <Window windowKey={WINDOWS.MARVEL} initSize={initSize} initPosition={initPos}>
+      <Image src="/images/Marvel.png" alt="" width={1983 / 2} height={997 / 2} />
     </Window>
   )
 }
