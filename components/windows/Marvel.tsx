@@ -7,8 +7,8 @@ const MarvelWindow: FC = () => {
 
 
   const initSize = {
-    h: 580,
-    w: 1000,
+    h: 800 / 2,
+    w: 1983 / 2,
   }
   const initPos = {
     x: 330,
