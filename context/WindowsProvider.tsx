@@ -26,15 +26,18 @@ export const WindowsContext = createContext(initContext)
 export const useWindowsContext = () => useContext(WindowsContext)
 
 export const WINDOWS = {
-  Koma: "Koma",
+  Marvel: "Marvel",
   // SWEEPER: "Gogg Sweeper",
   DEX: "Goggdex",
   // RAID: "Twitter Quest",
   DISCORD: "Discord",
   HOME: "Home",
+  Koma: "Koma",
 }
 
 export const ICONS = {
+  [WINDOWS.Marvel]: "/images/Marvel.png",
+
   [WINDOWS.Koma]: "/images/koma.png",
   [WINDOWS.DEX]: "/images/pokeball.png",
   // [WINDOWS.SWEEPER]: "/images/pixel-bomb.png",

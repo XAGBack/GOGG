@@ -3,7 +3,7 @@ import { FC } from "react"
 import { WINDOWS } from "../../context/WindowsProvider"
 import Window from "../Window"
 
-const KomaWindow: FC = () => {
+const MarvelWindow: FC = () => {
 
 
   const initSize = {
@@ -16,10 +16,10 @@ const KomaWindow: FC = () => {
   }
 
   return (
-    <Window windowKey={WINDOWS.Koma} initSize={initSize} initPosition={initPos}>
-      <Image src="/images/GMBsSdDWQAAqmFn.webp" alt="" width={1983 / 2} height={997 / 2} />
+    <Window windowKey={WINDOWS.Marvel} initSize={initSize} initPosition={initPos}>
+      <Image src="/images/GBWvBxwWwAAdo-p.jpg" alt="" width={1983 / 2} height={997 / 2} />
     </Window>
   )
 }
 
-export default KomaWindow
+export default MarvelWindow
