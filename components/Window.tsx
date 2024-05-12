@@ -64,7 +64,7 @@ const Window: FC<WindowProps> = ({ children, initPosition, windowKey, initSize, 
       ref={containerRef}
       style={{
         width: size.w,
-        height: size.h,
+        // height: size.h,
         top: position.y,
         left: position.x,
         zIndex: orderIndex + 5
